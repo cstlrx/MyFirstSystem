@@ -1,4 +1,4 @@
-package io.lrx_servlet;
+package io.lrx.user.web.servlet;
 
 import java.util.HashSet;
 import java.util.Set;

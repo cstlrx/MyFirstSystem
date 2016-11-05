@@ -21,24 +21,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 
   </head>
-  
+ 
   <body>
     <center>sign in<br/>
+    <p style="color:red; font-weight: 900">${msg}</p>
+    
     <form action="<%=path%>/SignServlet" method="post">
     	<table border="1" cellspacing="0"  height="100">
 	    	<tr>
 	    		<td>name:</td>
-	    		<td><input type="text" name="username"/></td>
+	    		<td><input type="text" name="username" value="${user.username }"/></td>
 	    	</tr>
 	    	
 	    	<tr>
 	    		<td>password:</td>
 	    		<td><input type="password" name="password"/></td>
-	    	</tr>
-	    	
-	    	<tr>
-	    		<td>email:</td>
-	    		<td><input type="email" name="email"/></td>
+	    		
 	    	</tr>
 
 	    	<tr align="center">

@@ -7,22 +7,32 @@
   <display-name></display-name>
   <servlet>
     <servlet-name>LogServlet</servlet-name>
-    <servlet-class>io.lrx_servlet.LogServlet</servlet-class>
+    <servlet-class>io.lrx.user.web.servlet.LogServlet</servlet-class>
+  </servlet>
+	<servlet>
+    <servlet-name>SignServlet</servlet-name>
+    <servlet-class>io.lrx.user.web.servlet.SignServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>VerifyCodeServlet</servlet-name>
-    <servlet-class>io.lrx_servlet.VerifyCodeServlet</servlet-class>
+    <servlet-class>io.lrx.user.web.servlet.VerifyCodeServlet</servlet-class>
   </servlet>
+
 
 
   <servlet-mapping>
     <servlet-name>LogServlet</servlet-name>
     <url-pattern>/LogServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>SignServlet</servlet-name>
+    <url-pattern>/SignServlet</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>VerifyCodeServlet</servlet-name>
     <url-pattern>/VerifyCodeServlet</url-pattern>
-  </servlet-mapping>	
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>

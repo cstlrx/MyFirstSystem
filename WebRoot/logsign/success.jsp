@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -22,12 +23,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   <%
-  String username=(String)session.getAttribute("username");//jsp头定义了session
-  if(username==null){
-  	response.sendRedirect("/MyFirstSystem/logsign/login.jsp");
-  }
+	 /*  String username=(String)session.getAttribute("username");//jsp头定义了session
+	  if(username==null){
+	  	response.sendRedirect("/MyFirstSystem/logsign/login.jsp");
+	  } */
    %>
+   	<!-- 改用c标签改进 -->
+   
   <body>
-    	<font ><%=username%>,欢迎成功登陆！！！</font> <br>
+  <c:choose>
+  	<c:when test="${ empty sessionScope.user}">
+  		<font >${sessionScope.user.username },欢迎成功登陆！！！</font> <br>
+  	</c:when>
+  	<c:otherwise>
+  		gun!!
+  	</c:otherwise>
+  </c:choose>
+    	
   </body>
 </html>
